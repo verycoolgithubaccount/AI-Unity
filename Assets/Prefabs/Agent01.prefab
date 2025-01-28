@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 4383073966756428229}
   - component: {fileID: 8392754842956828863}
   - component: {fileID: 3980467735837423786}
+  - component: {fileID: -1939325764077849388}
+  - component: {fileID: -1140608852772639666}
   m_Layer: 0
   m_Name: Agent01
   m_TagString: Agent01
@@ -130,6 +132,7 @@ MonoBehaviour:
   seekPerception: {fileID: 0}
   fleePerception: {fileID: 4383073966756428229}
   flockPerception: {fileID: 3980467735837423786}
+  obstaclePerception: {fileID: -1140608852772639666}
   height: 0.5
 --- !u!114 &4383073966756428229
 MonoBehaviour:
@@ -143,9 +146,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18c942c72ccb5cb449c1774522344987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  description: Flee Agent02
   tagName: Agent02
-  maxDistance: 5
+  maxDistance: 20
   maxAngle: 180
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &8392754842956828863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,9 +178,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18c942c72ccb5cb449c1774522344987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  description: Flock with Agent01
   tagName: Agent01
-  maxDistance: 5
+  maxDistance: 10
   maxAngle: 150
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &-1939325764077849388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9169921257613998270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec8c2611b06c6d429db84ea3e324619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  works: 1
+--- !u!114 &-1140608852772639666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9169921257613998270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38475a5c2a55aa348971cfd7bd027616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Avoid obstacles
+  tagName: 
+  maxDistance: 2
+  maxAngle: 180
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  numRaycast: 2
 --- !u!1001 &572134261135765107
 PrefabInstance:
   m_ObjectHideFlags: 0
